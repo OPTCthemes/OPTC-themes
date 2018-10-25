@@ -41,8 +41,6 @@ body{
         padding: 0;
     }
     #textBG{
-        background-image: url(textBG.png);
-        max-width: 448px;
         height: 112px;
         margin: 0 auto;
     }
@@ -158,6 +156,7 @@ html {
     }
     h4{
         background-image: url(h4.png);
+        max-width:100%;
         background-repeat: no-repeat;
         height:66px;
         width: 326px;
@@ -175,6 +174,10 @@ html {
 }
     .image{
         width: 100%;
+        max-width:100%;
+    }
+    .textbg{
+        position: relative;
     }
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -184,12 +187,12 @@ html {
 <body>
 <div class="container">
 	<div class="row align-items-center noMarg">
-		<div class="col-md-3">
+		<div class="col-md-3 ">
             
 		</div>
-		<div id="borderimg" class="col-md-6 contentBG">
+		<div id="borderimg" class="col-md-6 col-sm-12 contentBG">
             <div class="mid">
-                <img class="mid" src="logo.png">
+                <img class="mid image" src="logo.png">
                 <h1 id="title">One Piece Treasure Cruise Theme Selector</h1>
                 <p>Bored? Wanting to play OPTC but no content? Are you wasted and you want to have fun? Here's something you can play around with!</p>
                 <br>
@@ -200,6 +203,7 @@ html {
                 
                 <h4>Get Your Theme!</h4>
                 <div id="textBG">
+                    <img class="image textbg" src="textBG.png" >
                 <p class="shine" id="theme"></p>
                 </div>
                 <br/>
