@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="media-no-js media-desktop media-landscape" lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OPTC theme selector</title>
+      
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+body{
+    background-image: url(background.png);
+    font-family: 'Montserrat', sans-serif;
+	padding-top: 3em;
+}   
+    
+    #example{
+    background-image: url(background.png);
+    }
+    p,h1,h4{
+    font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        color: white;
+    }
+    #title{
+        color: white;        
+    }
+    .modalP{
+        color: black;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    a:hover{
+        color:lightgray;
+    }
+    .noMarg{
+        margin: 0;
+        padding: 0;
+    }
+    #textBG{
+        background-image: url(textBG.png);
+        max-width: 448px;
+        height: 112px;
+        margin: 0 auto;
+    }
+    #theme{
+        text-align: center;
+        text-transform: capitalize;
+        vertical-align: middle;
+        padding-top: 56px;
+        font-size: 18pt;
+        color: black;
+        font-weight: bold;
+    }
+    #footerText {
+        text-align: center;
+    }
+    
+  .button {
+    backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(157deg,#ffffff 10.634766704788461%,#ffa012 41.45499628643339%,#f34c01 73.70872491838739%,#a70b06 99.87008258652786%);
+  border-radius: 15px;
+  border: 1px solid #a70b06;
+  border-width: 2px 2px 2px 2px;
+  padding: 11px 11px 11px 11px;
+    color: #a70b06;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+  animation: glowing 2400ms infinite;
+  }
+    @keyframes glowing {
+  0% { box-shadow: 0 0 -10px #e43109; }
+  40% { box-shadow: 0 0 20px #e43109; }
+  60% { box-shadow: 0 0 20px #e43109; }
+  100% { box-shadow: 0 0 -10px #e43109; }
+}
+
+    .buttonSmall {
+    backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(157deg,#ffffff 10.634766704788461%,#ffa012 41.45499628643339%,#f34c01 73.70872491838739%,#a70b06 99.87008258652786%);
+  border-radius: 10px;
+  border: 2px solid #a70b06;
+  border-width: 1px 1px 1px 1px;
+  padding: 2px 6px 2px 6px;
+  
+    color: #a70b06;
+  font-size: 12px;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);        
+  }
+    .button:hover{
+  background: linear-gradient(157deg,#ffffff 10.634766704788461%,#ffa012 38.45499628643339%,#f34c01 71.70872491838739%,#a70b06 99.87008258652786%);
+  box-shadow: 0px 1px 19px 4px #e43109,0px 2px 8px rgba(0,0,0,0.3);
+       color: #cb280e; 
+    }
+    .buttonSmall:hover{
+  background: linear-gradient(157deg,#ffffff 10.634766704788461%,#ffa012 38.45499628643339%,#f34c01 71.70872491838739%,#a70b06 99.87008258652786%);
+  box-shadow: 0px 1px 15px 3px #e43109,0px 2px 8px rgba(0,0,0,0.3);
+       color: #cb280e; 
+    }
+  .button > div {
+    color: #999;
+  font-size: 10px;
+  font-weight: initial;
+  font-style: normal;
+  text-align: center;
+  margin: 0px 0px 0px 0px
+  }
+  .button > i {
+    font-size: 1em;
+  border-radius: 0px;
+  border: 0px solid transparent;
+  border-width: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  position: static
+  }
+  .button > .ld {
+    font-size: initial
+  }
+    .mid{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    $duration: 5s;
+$text-color: rgba(255, 255, 255, 0.3);
+$bgr-color: #333;
+html {
+	background-color: $bgr-color;
+	text-align: center
+}
+    .contentBG{
+        height: 100%;
+        background-image: url(contentBG.png);
+        background-position: -45px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .contentBG{
+        position: absolute;
+    }
+    h4{
+        background-image: url(h4.png);
+        background-repeat: no-repeat;
+        height:66px;
+        width: 326px;
+        padding-top: 15px;
+        margin: 0 auto;
+        text-align: center;
+        color: white !important;
+    }
+#borderimg { 
+    border: 30px solid transparent;
+    padding: 15px;
+    -webkit-border-image: url(198_2px.png) 30 round; /* Safari 3.1-5 */
+    -o-border-image: url(198_2px.png) 30 round; /* Opera 11-12.1 */
+    border-image: url(198_2px.png) 30 round;
+}
+    .image{
+        width: 100%;
+    }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
+</head>
+    
+<body>
+<div class="container">
+	<div class="row align-items-center noMarg">
+		<div class="col-md-3">
+            
+		</div>
+		<div id="borderimg" class="col-md-6 contentBG">
+            <div class="mid">
+                <img class="mid" src="logo.png">
+                <h1 id="title">One Piece Treasure Cruise Theme Selector</h1>
+                <p>Bored? Wanting to play OPTC but no content? Are you wasted and you want to have fun? Here's something you can play around with!</p>
+                <br>
+                <p>The OPTC Theme Selector is a script that generates a theme for you to build a crew around. 
+                    <button type="button" class="buttonSmall" data-toggle="modal" data-target="#example">Click here for an example
+    </button>
+                </p>
+                
+                <h4>Get Your Theme!</h4>
+                <div id="textBG">
+                <p class="shine" id="theme"></p>
+                </div>
+                <br/>
+                <div >
+               <button class="button mid" id="singlePull">Single Pull</button>
+                    </div>
+            </div>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+    <div class="row">
+    <div class="col-md-3">
+		</div>
+        <div class="col-md-6">
+            <p id="footerText">Have a suggestion? Please contact me via <a href="mailto:optcthemes@gmail.com">optcthemes@gmail.com</a></p>
+		</div>
+        <div class="col-md-3">
+		</div>
+    </div>
+</div>
+    
+    <div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Team Building Example</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="modalP">This theme selector gives you ideas for you to build teams around. Just "pull" away and start building!</p>
+          
+          <p class="modalP">For example, if you get the <span style="color:red;">"Fire"</span> theme, you can select characters that have Fire in their art or attack animation. Example:</p>
+          <img class="image" src="fire.jpg">
+          <br /><br />
+          <p class="modalP">Another example would be "One Eye Open"</p>
+          
+          <img class="image" src="oneeye.jpg" >
+          
+          <p class="modalP">I think you get the idea. Have fun!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    var themes = ["blue", "green", "Mouth open","yellow","grey","purple","white","black","orange","huge fist","brown","red","gold","logia","impel down","paramecia","< 30 cost","beard","tongue sticking out","silver","zoan","legend","3 star","vegetable","animal","spikes","glasses","fire","warmth","( . )( . )","bikini","straw hats","dressrosa","cold","captain","fishmen","marine","pirates","long hair","short hair","horizontal art","fanservice","husbando","waifu","kuja","electricity","insect","music","boat captains","6+","family","old age","smiling","grinning","serious face","dead people","shichibukai","bearded","one eye open","flowers","looking away","rainbowed","mad face","eating","marineford","kuja","supernova","mink","sword","looking the same direction","moustache","masked","same haircolor","Haki user","mid air","young age","about to strike","blonde hair","black hair","something in their mouth","shirt open","villain","alabasta","east blue","skypea","water seven","thriller bark","highest damage","spear","alternative shooting device","gloves","water","d.","8-pack abs", "highest damage", "Super Evolution", "max Cotton Candy"];
+            var count = themes.length;
+            console.log("total: " + count);
+$("#singlePull").click( function()
+           {
+            var no = Math.floor((Math.random() * count));
+    console.log(no);
+            $("#theme").text(themes[no]);
+            
+           }
+        );
+</script>
+</body>
+</html>
