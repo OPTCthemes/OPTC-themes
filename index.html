@@ -22,6 +22,7 @@ body{
     font-family: 'Montserrat', sans-serif;
         text-align: center;
         color: white;
+        text-shadow: 1px 1px 8px #000000;
     }
     #title{
         color: white;        
@@ -48,9 +49,12 @@ body{
         text-align: center;
         text-transform: capitalize;
         vertical-align: middle;
-        padding-top: 56px;
+        position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
         font-size: 18pt;
-        color: black;
+        color: white;
         font-weight: bold;
     }
     #footerText {
@@ -112,6 +116,9 @@ body{
   box-shadow: 0px 1px 15px 3px #e43109,0px 2px 8px rgba(0,0,0,0.3);
        color: #cb280e; 
     }
+    .button:active:checked{
+        border: none;
+    }
   .button > div {
     color: #999;
   font-size: 10px;
@@ -148,7 +155,6 @@ html {
         height: 100%;
         background-image: url(contentBG.jpg);
         background-position: -45px;
-        margin-left: 20px;
         margin-right: 20px;
     }
     .contentBG{
@@ -165,6 +171,10 @@ html {
         text-align: center;
         color: white !important;
     }
+    h3{
+        color: white !important;
+        text-align: center;
+    }
 #borderimg { 
     border: 30px solid transparent;
     padding: 15px;
@@ -179,6 +189,14 @@ html {
     .textbg{
         position: relative;
     }
+    .logo{
+        width: 66%;
+    }
+    .container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   
@@ -192,17 +210,17 @@ html {
 		</div>
 		<div id="borderimg" class="col-md-6 col-sm-12 contentBG">
             <div class="mid">
-                <img class="mid image" src="logo.png">
+                <img class="mid image logo" src="logo.png">
                 <h1 id="title">One Piece Treasure Cruise Theme Selector</h1>
                 <p>Bored? Wanting to play OPTC but no content? Are you wasted and you want to have fun? Here's something you can play around with!</p>
                 <br>
                 <p>The OPTC Theme Selector is a script that generates a theme for you to build a crew around. 
-                    <button type="button" class="buttonSmall" data-toggle="modal" data-target="#example">Click here for an example
+                    <br /><button type="button" class="buttonSmall" data-toggle="modal" data-target="#example">Click here for an example
     </button>
                 </p>
                 
-                <h4>Get Your Theme!</h4>
-                <div id="textBG">
+                <h3>Get Your Theme!</h3>
+                <div class="container">
                     <img class="image textbg" src="textBG.png" >
                 <p class="shine" id="theme"></p>
                 </div>
@@ -226,13 +244,13 @@ html {
     </div>
 </div>
     
-    <div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Team Building Example</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -241,7 +259,7 @@ html {
           <p class="modalP">For example, if you get the <span style="color:red;">"Fire"</span> theme, you can select characters that have Fire in their art or attack animation. Example:</p>
           <img class="image" src="fire.jpg">
           <br /><br />
-          <p class="modalP">Another example would be "One Eye Open"</p>
+          <p class="modalP">Another theme could be "One Eye Open".</p>
           
           <img class="image" src="oneeye.jpg" >
           
@@ -258,7 +276,7 @@ html {
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
-    var themes = ["blue", "green", "Mouth open","yellow","grey","purple","white","black","orange","huge fist","brown","red","gold","logia","impel down","paramecia","< 30 cost","beard","tongue sticking out","silver","zoan","legend","3 star","vegetable","animal","spikes","glasses","fire","warmth","( . )( . )","bikini","straw hats","dressrosa","cold","captain","fishmen","marine","pirates","long hair","short hair","horizontal art","fanservice","husbando","waifu","kuja","electricity","insect","music","boat captains","6+","family","old age","smiling","grinning","serious face","dead people","shichibukai","bearded","one eye open","flowers","looking away","rainbowed","mad face","eating","marineford","kuja","supernova","mink","sword","looking the same direction","moustache","masked","same haircolor","Haki user","mid air","young age","about to strike","blonde hair","black hair","something in their mouth","shirt open","villain","alabasta","east blue","skypea","water seven","thriller bark","highest damage","spear","alternative shooting device","gloves","water","d.","8-pack abs", "highest damage", "Super Evolution", "max Cotton Candy"];
+    var themes = ["blue", "green", "Mouth open","yellow","grey","purple","white","black","orange","huge fist","brown","red","gold","logia","impel down","paramecia","< 30 cost","beard","tongue sticking out","silver","zoan","legend","3 star","vegetable","animal","spikes","glasses","fire","warmth","( . )( . )","bikini","straw hats","dressrosa","cold","captain","fishmen","marine","pirates","long hair","short hair","horizontal art","fanservice","husbando","waifu","kuja","electricity","insect","music","boat captains","6+","family","old age","smiling","grinning","serious face","dead people","shichibukai","bearded","one eye open","flowers","looking away","rainbowed","mad face","eating","marineford","kuja","supernova","mink","sword","looking the same direction","moustache","masked","same haircolor","Haki user","mid air","young age","about to strike","blonde hair","black hair","something in their mouth","shirt open","villain","alabasta","east blue","skypea","water seven","thriller bark","highest damage","spear","alternative shooting device","holiday themed","gloves","water","d.","8-pack abs","highest damage","highest RCV","Super Evolution","max Cotton Candy", "eaters"];
             var count = themes.length;
             console.log("total: " + count);
 $("#singlePull").click( function()
