@@ -8,6 +8,7 @@
 <title>OPTC theme selector</title>
       
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
     
 body{
@@ -49,6 +50,21 @@ body{
         height: 112px;
         margin: 0 auto;
     }
+    #restrict{
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        position: absolute;
+        top: 35%;
+        left: 71%;
+        transform: translate(-35%, -71%);
+        font-size: 12pt;
+        color: dimgray;
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        font-weight: bold;
+        background-image: url(dsBG.png);
+        background-size: cover;
+        text-align: right !important;
+    }
     #theme{
         text-align: center;
         text-transform: capitalize;
@@ -63,6 +79,9 @@ body{
     }
     #footerText {
         text-align: center;
+    }
+    .attdown{
+        position: relative;
     }
     
   .button {
@@ -221,13 +240,18 @@ html {
                 
                 <h3>Get Your Theme!</h3>
                 <div class="container">
+                    <div class="d-none"  id="restrictArea">
+                    <p class="shine " id="restrict"></p>
+                        </div>
                     <img class="image textbg" src="textBG.png" >
-                <p class="shine" id="theme"></p>
+                    <p class="shine" id="theme"></p>
+                    
                 </div>
+                
                 <br/>
                 <div >
                <button class="button mid" id="singlePull">Single Pull</button>
-                    </div>
+               <label for="condition">Restrict me</label> <input type="checkbox" id="condition">    </div>
             </div>
 		</div>
 		<div class="col-md-3 col-sm-0">
@@ -275,14 +299,27 @@ html {
     
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
 <script>
+    var restrictions = ["no INT","no PSY","no STR","no QCK","no DEX","no Slashers","no Strikers","no shooters","no driven","no cerebral","no fighter","no free spirit","no legends","no colosseum","no powerhouse","no devilfruit"]
+    
     var themes = ["blue", "green", "Mouth open","yellow","grey","purple","white","black","orange","huge fist","brown","red","gold","logia","impel down","paramecia","< 30 cost","beard","tongue sticking out","silver","zoan","legend","3 star","vegetable","animal","spikes","glasses","fire","warmth","( . )( . )","bikini","straw hats","dressrosa","cold","captain","fishmen","marine","pirates","long hair","short hair","horizontal art","fanservice","husbando","waifu","kuja","electricity","insect","music","boat captains","6+","family","old age","smiling","grinning","serious face","dead people","shichibukai","bearded","one eye open","flowers","looking away","rainbowed","mad face","eating","marineford","kuja","supernova","mink","sword","looking the same direction","moustache","masked","same haircolor","Haki user","mid air","young age","about to strike","blonde hair","black hair","something in their mouth","shirt open","villain","alabasta","east blue","skypea","water seven","thriller bark","highest damage","spear","alternative shooting device","holiday themed","gloves","water","d.","8-pack abs","highest damage","highest RCV","Super Evolution","max Cotton Candy", "eaters"];
             var count = themes.length;
-            console.log("total: " + count);
-$("#singlePull").click( function()
-           {
+            var countRestrictor = restrictions.length
+            var restrictBlock = $('#restrictArea');
+    
+            $("#singlePull").click( function(){
+                if(document.getElementById("condition").checked == true){
+                    restrictBlock.removeClass('d-none');
+                    var res = Math.floor((Math.random() * countRestrictor));
+                    $("#restrict").text(restrictions[res]);
+                }
+                else{
+                    restrictBlock.addClass('d-none');	
+                    $("#restrict").text(null);
+                }
             var no = Math.floor((Math.random() * count));
-    console.log(no);
+
             $("#theme").text(themes[no]);
             
            }
