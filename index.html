@@ -9,12 +9,16 @@
       
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <style>
+    
 body{
     background-image: url(background.jpg);
     font-family: 'Montserrat', sans-serif;
-	padding-top: 3em;
 }   
-    
+  @media only screen and (min-width: 600px) {
+    body {
+	padding-top: 2em;
+    }
+}  
     #example{
     background-image: url(background.jpg);
     }
@@ -50,10 +54,10 @@ body{
         text-transform: capitalize;
         vertical-align: middle;
         position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-        font-size: 18pt;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16pt;
         color: white;
         font-weight: bold;
     }
@@ -155,7 +159,6 @@ html {
         height: 100%;
         background-image: url(contentBG.jpg);
         background-position: -45px;
-        margin-right: 20px;
     }
     .contentBG{
         position: absolute;
@@ -177,7 +180,7 @@ html {
     }
 #borderimg { 
     border: 30px solid transparent;
-    padding: 15px;
+    padding: 10px;
     -webkit-border-image: url(198_2px.png) 30 round; /* Safari 3.1-5 */
     -o-border-image: url(198_2px.png) 30 round; /* Opera 11-12.1 */
     border-image: url(198_2px.png) 30 round;
@@ -185,9 +188,6 @@ html {
     .image{
         width: 100%;
         max-width:100%;
-    }
-    .textbg{
-        position: relative;
     }
     .logo{
         width: 66%;
@@ -205,7 +205,7 @@ html {
 <body>
 <div class="container">
 	<div class="row align-items-center noMarg">
-		<div class="col-md-3 ">
+		<div class="col-md-3 col-sm-0">
             
 		</div>
 		<div id="borderimg" class="col-md-6 col-sm-12 contentBG">
@@ -230,7 +230,7 @@ html {
                     </div>
             </div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 col-sm-0">
 		</div>
 	</div>
     <div class="row">
